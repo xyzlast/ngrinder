@@ -31,11 +31,10 @@ class Test1 {
     // This method is executed once per a process.
     @BeforeProcess
     public static void beforeClass() {
+        java.lang.System.setProperty("https.protocols", "TLSv1,TLSv1.1,TLSv1.2");
         test = new GTest(1, 'SaveAssetsTest');
         request = new HTTPRequest();
         test.record(request);
-        System.setProperty("https.protocols", "TLSv1.2");
-        System.properties['jdk.tls.client.protocols'] = 'TLSv1.2'
         grinder.logger.info("before process.");
     }
 
