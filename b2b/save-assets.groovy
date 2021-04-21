@@ -35,6 +35,7 @@ class Test1 {
         request = new HTTPRequest();
         test.record(request);
         System.setProperty("https.protocols", "TLSv1.2");
+        System.properties['jdk.tls.client.protocols'] = 'TLSv1.2'
         grinder.logger.info("before process.");
     }
 
