@@ -13,11 +13,6 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 import HTTPClient.HTTPResponse
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 /**
  * A simple example using the HTTP plugin that shows the retrieval of a
@@ -54,13 +49,7 @@ class Test1 {
     // This method is continuously executed until you stop the test
     @Test
     public void test(){
-        def body = new JSONObject();
-        body.put('userKey', 'SKP_f8ca85cf4e2f94bdf249dd74a9d2d6ae1e646f9e82cb34698213c3c930a25f0c');
-        body.put('membershipId', 'test');
-        body.put('txNo', UUID.randomUUID().toString());
-        body.put('assetsType', 'peg');
-        body.put('txCode', '00');
-        HTTPResponse result = request.POST("http://192.168.100.15:4000/v3/b2b/skp/assets/saving", body.toString());
+        HTTPResponse result = request.GET("http://192.168.100.15:4000/v3/b2b/skp/assets/state?userKey=SKP_f8ca85cf4e2f94bdf249dd74a9d2d6ae1e646f9e82cb34698213c3c930a25f0c");
         if (result.statusCode == 301 || result.statusCode == 302) {
             grinder.logger.warn("Warning. The response may not be correct. The response code was {}.", result.statusCode);
         } else {
