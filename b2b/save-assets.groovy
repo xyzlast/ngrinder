@@ -15,6 +15,7 @@ import org.junit.runner.RunWith
 import HTTPClient.HTTPResponse
 import org.json.JSONException;
 import org.json.JSONObject;
+import HTTPClient.NVPair
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
