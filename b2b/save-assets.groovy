@@ -31,7 +31,7 @@ class Test1 {
     // This method is executed once per a process.
     @BeforeProcess
     public static void beforeClass() {
-        test = new GTest(1, "${name}");
+        test = new GTest(1, 'SaveAssetsTest');
         request = new HTTPRequest();
         test.record(request);
         grinder.logger.info("before process.");
