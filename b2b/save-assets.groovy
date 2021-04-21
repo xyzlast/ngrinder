@@ -34,7 +34,7 @@ class Test1 {
         test = new GTest(1, 'SaveAssetsTest');
         request = new HTTPRequest();
         test.record(request);
-        System.setProperty("https.protocols", "TLSv1,TLSv1.1,TLSv1.2");
+        System.setProperty("https.protocols", "TLSv1.2");
         grinder.logger.info("before process.");
     }
 
