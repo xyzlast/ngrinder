@@ -62,14 +62,13 @@ class Test1 {
     // This method is continuously executed until you stop the test
     @Test
     public void test(){
-        // def body = new JSONObject();
-        // body.put('userKey', 'SKP_f8ca85cf4e2f94bdf249dd74a9d2d6ae1e646f9e82cb34698213c3c930a25f0c');
-        // body.put('membershipId', 'test');
-        // body.put('txNo', UUID.randomUUID().toString());
-        // body.put('assetsType', 'peg');
-        // body.put('txCode', '00');
-        // body.put("weight", "100");
-        def body = '{"user":{"name":"testName","birth":"19781108","gender":"1","mdn":"01011112222","nationality":"N","ci":"5cb1b4cf-6518-4c4c-bc90-2b03594973c1"},"userService":{"membershipId":"9cf4271b-db67-491a-a10a-d818e1e21897","data01":"ca275f6d-9e97-4962-940c-ac1b0b256983"},"termsList":[{"M1":"Y"},{"M2":"Y"}]}';
+        def body = new JSONObject();
+        body.put('userKey', 'SKP_f8ca85cf4e2f94bdf249dd74a9d2d6ae1e646f9e82cb34698213c3c930a25f0c');
+        body.put('membershipId', 'test');
+        body.put('txNo', UUID.randomUUID().toString());
+        body.put('assetsType', 'peg');
+        body.put('txCode', '00');
+        body.put("weight", "100");
         HTTPResponse result = request.POST("http://192.168.100.15:4000/v3/b2b/skp/user/signup", body.getBytes(), headers());
         if (result.statusCode == 301 || result.statusCode == 302) {
             grinder.logger.warn("Warning. The response may not be correct. The response code was {}.", result.statusCode);
