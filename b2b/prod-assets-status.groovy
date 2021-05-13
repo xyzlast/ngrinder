@@ -32,7 +32,7 @@ class Test1 {
     @BeforeProcess
     public static void beforeClass() {
         java.lang.System.setProperty("https.protocols", "TLSv1,TLSv1.1,TLSv1.2");
-        test = new GTest(1, 'SaveAssetsTest');
+        test = new GTest(1, 'AssetsStatusTest');
         request = new HTTPRequest();
         test.record(request);
         grinder.logger.info("before process.");
@@ -49,7 +49,7 @@ class Test1 {
     // This method is continuously executed until you stop the test
     @Test
     public void test(){
-        HTTPResponse result = request.GET("https://www.pennygold.kr/v3/b2b/skp/quote/date?userKey=MT_f8ca85cf4e2f94bdf249dd74a9d2d6ae1e646f9e82cb34698213c3c930a25f0c");
+        HTTPResponse result = request.GET("https://www.pennygold.kr/v3/b2b/skp/assets/state?userKey=MT_f8ca85cf4e2f94bdf249dd74a9d2d6ae1e646f9e82cb34698213c3c930a25f0c");
         if (result.statusCode == 301 || result.statusCode == 302) {
             grinder.logger.warn("Warning. The response may not be correct. The response code was {}.", result.statusCode);
         } else {
