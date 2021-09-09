@@ -67,8 +67,8 @@ class Test1 {
         body.put('membershipId', 'test');
         body.put('txNo', UUID.randomUUID().toString());
         body.put('assetsType', 'peg');
-        body.put('txCode', '00');
-        body.put("weight", "100");
+        body.put('txCode', '12');
+        body.put("weight", "1");
         HTTPResponse result = request.POST("http://192.168.100.15:4000/v3/b2b/skp/assets/saving", body.toString().getBytes(), headers());
         if (result.statusCode == 301 || result.statusCode == 302) {
             grinder.logger.warn("Warning. The response may not be correct. The response code was {}.", result.statusCode);
