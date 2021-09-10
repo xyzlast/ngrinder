@@ -63,7 +63,7 @@ class Test1 {
     @Test
     public void test(){
         def body = new JSONObject();
-        body.put('userKey', 'SKP_f8ca85cf4e2f94bdf249dd74a9d2d6ae1e646f9e82cb34698213c3c930a25f0c');
+        body.put('userKey', 'SKP_6ca6c45ed958539d14c50787efbfc9e6d769aa5ae21622e604141977f1172a7d');
         body.put('membershipId', 'test');
         body.put('txNo', UUID.randomUUID().toString());
         body.put('assetsType', 'peg');
